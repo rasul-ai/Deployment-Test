@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mic-container {
+  margin: 40px 0;
+}
+
+.mic-button {
+  background: none;
+  border: 3px solid #61dafb;
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.mic-button:hover:not(:disabled) {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.mic-button.recording {
+  border-color: red;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.status, .error {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.status {
+  color: blue;
+}
+
+.error {
+  background: #ff6b6b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.response-card {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.clear-btn, .upload-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px 10px;
+}
+
+pre {
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: left;
+  overflow-x: auto;
+  font-size: 14px;
+  color: black; /* Fixed: Black text for visibility */
+}
+
+.instructions {
+  margin-top: 20px;
+  font-style: italic;
+  color: #ccc;
+}
+
+.device-selection {
+  margin: 10px 0;
+}
+
+.device-selection label {
+  margin-right: 10px;
+}
+
+.device-selection select {
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.preview-section {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.preview-section h3 {
+  color: black; /* Fixed: Black text for preview header visibility */
+}
+
+.preview-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}

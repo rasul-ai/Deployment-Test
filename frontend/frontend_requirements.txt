@@ -1,0 +1,5 @@
+npx create-react-app patient-referral-frontend
+cd patient-referral-frontend
+npm install react-icons
+npm install recordrtc
+npm start

@@ -1,0 +1,8 @@
+2025-11-16 12:35:44.429 | INFO     | utils.data_extraction:init_db:98 - Database initialized successfully.
+2025-11-16 12:37:37.044 | INFO     | main:process_referral:264 - Received MP3: recording.webm
+2025-11-16 12:37:47.061 | INFO     | main:transcribe_mp3_with_openai:238 - MP3 audio transcription completed successfully
+2025-11-16 12:38:02.863 | INFO     | utils.data_extraction:save_to_db:217 - Patient 17RRJAT saved to database successfully.
+2025-11-16 12:38:02.864 | INFO     | main:process_referral:287 - Saved raw MP3 with patient ID: 17RRJAT -> ./audio_files/17RRJAT.mp3
+2025-11-16 15:05:11.762 | INFO     | utils.data_extraction:init_db:99 - Database initialized successfully.
+2025-11-16 15:05:12.344 | INFO     | utils.data_extraction:init_db:99 - Database initialized successfully.
+2025-11-16 15:05:12.354 | INFO     | utils.data_extraction:init_db:99 - Database initialized successfully.

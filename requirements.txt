@@ -1,0 +1,10 @@
+langextract
+openai
+python-dotenv
+streamlit==1.50.0
+loguru
+pandas
+fastapi
+uvicorn 
+python-multipart 
+pydub
