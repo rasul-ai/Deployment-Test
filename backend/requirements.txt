@@ -1,9 +1,8 @@
-langextract
-openai
-python-dotenv
-loguru
-pandas
-fastapi
-uvicorn 
-python-multipart 
-pydub
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0  # [standard] includes async extras
+openai>=1.0.0
+python-dotenv>=1.0.0
+pydub>=0.25.0
+audioop-lts>=0.1.0  # Fixes pydub on Python 3.13
+langextract==1.0.9  # From your code; adjust if needed
+python-multipart>=0.0.5  # For FastAPI file uploads

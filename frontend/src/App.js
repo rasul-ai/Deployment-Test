@@ -181,10 +181,15 @@ function App() {
       formData.append('audio_file', audioBlob, 'recording.webm');
 
       console.log('Uploading blob size:', audioBlob.size);
-      const response = await fetch('http://localhost:8000/process-referral', {
+      const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:8000';  // Fallback for local dev
+      const response = await fetch(`${API_BASE}/process-referral`, {
         method: 'POST',
         body: formData,
       });
+      // const response = await fetch('http://localhost:8000/process-referral', {
+      //   method: 'POST',
+      //   body: formData,
+      // });
 
       console.log('Response status:', response.status, 'OK?', response.ok);
       const responseText = await response.text();
