@@ -1,0 +1,9 @@
+langextract
+openai
+python-dotenv
+loguru
+pandas
+fastapi
+uvicorn 
+python-multipart 
+pydub
