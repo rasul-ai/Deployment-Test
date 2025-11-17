@@ -181,7 +181,8 @@ function App() {
       formData.append('audio_file', audioBlob, 'recording.webm');
 
       console.log('Uploading blob size:', audioBlob.size);
-      const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:8000';  // Fallback for local dev
+      // const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:8000';
+      const API_BASE = 'https://deployment-test-td2z.onrender.com'
       const response = await fetch(`${API_BASE}/process-referral`, {
         method: 'POST',
         body: formData,
