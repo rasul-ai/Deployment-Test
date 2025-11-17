@@ -22,23 +22,11 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Add CORS middleware to allow requests from your React app (adjust origins as needed)
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=[
-#         "http://localhost:3000",
-#         "http://127.0.0.1:3000",
-#     ],  # Replace with your React dev server URL
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "*",  # Temporary wildcard for testing—remove in production
         "http://localhost:3000",  # For local frontend
-        "https://your-frontend-domain.onrender.com"  # Add later for deployed frontend
+        "https://frontend-test-2f7y.onrender.com"  # Add later for deployed frontend
     ],
     allow_credentials=True,
     allow_methods=["*"],
