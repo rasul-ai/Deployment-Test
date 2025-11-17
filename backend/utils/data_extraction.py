@@ -647,50 +647,50 @@ from datetime import datetime
 from pydub import AudioSegment
 
 
-# -----------------------------
-# Transcription (Speech-to-Text - STT)
-# -----------------------------
-def transcribe_with_openai(audio_bytes):
-    """
-    Transcribe audio from bytes (e.g., received from a Streamlit microphone).
-    Converts WAV to MP3 to reduce file size, saves MP3 copy locally, then uses Whisper for English (en) transcription.
-    """
-    if not audio_bytes:
-        logger.warning("Empty audio bytes provided to transcribe_with_openai")
-        return ""
+# # -----------------------------
+# # Transcription (Speech-to-Text - STT)
+# # -----------------------------
+# def transcribe_with_openai(audio_bytes):
+#     """
+#     Transcribe audio from bytes (e.g., received from a Streamlit microphone).
+#     Converts WAV to MP3 to reduce file size, saves MP3 copy locally, then uses Whisper for English (en) transcription.
+#     """
+#     if not audio_bytes:
+#         logger.warning("Empty audio bytes provided to transcribe_with_openai")
+#         return ""
 
-    # Handle UploadedFile from Streamlit by extracting bytes
-    if hasattr(audio_bytes, "getvalue"):
-        audio_bytes = audio_bytes.getvalue()
+#     # Handle UploadedFile from Streamlit by extracting bytes
+#     if hasattr(audio_bytes, "getvalue"):
+#         audio_bytes = audio_bytes.getvalue()
 
-    # Create local directory for audio files if it doesn't exist
-    audio_dir = "./audio_files"
-    os.makedirs(audio_dir, exist_ok=True)
+#     # Create local directory for audio files if it doesn't exist
+#     audio_dir = "./audio_files"
+#     os.makedirs(audio_dir, exist_ok=True)
 
-    try:
-        # Load WAV bytes into AudioSegment
-        audio_segment = AudioSegment.from_wav(io.BytesIO(audio_bytes))
+#     try:
+#         # Load WAV bytes into AudioSegment
+#         audio_segment = AudioSegment.from_wav(io.BytesIO(audio_bytes))
 
-        # Export to MP3 (128 kbps for good quality/size balance for voice)
-        mp3_buffer = io.BytesIO()
-        audio_segment.export(mp3_buffer, format="mp3", bitrate="128k")
-        mp3_bytes = mp3_buffer.getvalue()
+#         # Export to MP3 (128 kbps for good quality/size balance for voice)
+#         mp3_buffer = io.BytesIO()
+#         audio_segment.export(mp3_buffer, format="mp3", bitrate="128k")
+#         mp3_bytes = mp3_buffer.getvalue()
 
-        # Generate unique filename with timestamp
-        timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-        mp3_filename = f"{audio_dir}/recording_{timestamp_str}.mp3"
+#         # Generate unique filename with timestamp
+#         timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+#         mp3_filename = f"{audio_dir}/recording_{timestamp_str}.mp3"
 
-        # Save MP3 copy locally
-        with open(mp3_filename, "wb") as f:
-            f.write(mp3_bytes)
-        logger.info(f"MP3 audio saved locally: {mp3_filename}")
+#         # Save MP3 copy locally
+#         with open(mp3_filename, "wb") as f:
+#             f.write(mp3_bytes)
+#         logger.info(f"MP3 audio saved locally: {mp3_filename}")
 
-        # Transcribe the MP3 with OpenAI Whisper
-        response = client.audio.transcriptions.create(
-            model="whisper-1", file=("audio_input.mp3", mp3_bytes), language="en"
-        )
-        logger.info("Audio transcription completed successfully")
-        return response.text
-    except Exception as e:
-        logger.error(f"Transcription Error: {e}")
-        return ""
+#         # Transcribe the MP3 with OpenAI Whisper
+#         response = client.audio.transcriptions.create(
+#             model="whisper-1", file=("audio_input.mp3", mp3_bytes), language="en"
+#         )
+#         logger.info("Audio transcription completed successfully")
+#         return response.text
+#     except Exception as e:
+#         logger.error(f"Transcription Error: {e}")
+#         return ""

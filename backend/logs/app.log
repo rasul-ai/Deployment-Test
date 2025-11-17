@@ -6,3 +6,12 @@
 2025-11-16 15:05:11.762 | INFO     | utils.data_extraction:init_db:99 - Database initialized successfully.
 2025-11-16 15:05:12.344 | INFO     | utils.data_extraction:init_db:99 - Database initialized successfully.
 2025-11-16 15:05:12.354 | INFO     | utils.data_extraction:init_db:99 - Database initialized successfully.
+2025-11-17 16:36:24.974 | INFO     | utils.data_extraction:init_db:99 - Database initialized successfully.
+2025-11-17 16:36:52.928 | INFO     | main:process_referral:101 - Received MP3: recording.webm
+2025-11-17 16:36:55.873 | INFO     | main:transcribe_mp3_with_openai:66 - MP3 audio transcription completed successfully
+2025-11-17 16:36:57.718 | WARNING  | utils.data_extraction:run_langextract:599 - No extractions found from langextract
+2025-11-17 16:37:28.791 | INFO     | main:process_referral:101 - Received MP3: recording.webm
+2025-11-17 16:37:30.585 | INFO     | main:transcribe_mp3_with_openai:66 - MP3 audio transcription completed successfully
+2025-11-17 16:37:36.998 | INFO     | utils.data_extraction:save_to_db:220 - Patient 9RE517W saved to database successfully.
+2025-11-17 16:37:36.999 | INFO     | main:process_referral:128 - Saved raw MP3 with patient ID: 9RE517W -> ./audio_files/9RE517W.mp3
+2025-11-17 16:37:58.311 | INFO     | utils.data_extraction:init_db:99 - Database initialized successfully.

@@ -9,10 +9,6 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-# Import your existing functions and modules
-from utils.data_extraction import (
-    transcribe_with_openai,
-)  # This will need adjustment for MP3 input (see notes below)
 from utils.data_extraction import get_all_history, init_db, run_langextract, save_to_db
 from utils.logger_config import logger
 
@@ -39,7 +35,7 @@ app.add_middleware(
 )
 
 # -----------------------------
-# Adjust transcribe_with_openai for MP3 input
+# Adjust transcribe_mp3_with_openai for MP3 input
 # -----------------------------
 # OpenAI Whisper supports MP3 directly, so no processing or saving to WAV needed.
 # This simplified version passes the raw MP3 bytes straight to the API.
